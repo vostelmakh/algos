@@ -1,9 +1,3 @@
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left = None
-        self.right = None
-
 def get_layered_representation(root):
     result = []
     DFS(root, 0, result)
