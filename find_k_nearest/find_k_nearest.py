@@ -1,13 +1,10 @@
-# Дан отсортированный массив чисел а, индекс элемента index и целое число k. Необходимо вернуть в любом порядке k чисел из массива, которые являются ближайшими по значению к элементу а[index].
+# Дан отсортированный массив чисел - arr, индекс элемента index и целое число k.
+# Необходимо вернуть в любом порядке k чисел из массива, которые являются ближайшими по значению к элементу а[index].
+from typing import List
 
-# find_k_closest([2,3,5,7,11], index=3, k=2) -> {5,7}
-
-# find_k_closest([4,12,15,15,24], index=1, k=3) -> {12,15,15}
-
-# find_k_closest([2,3,5,7,11], index=2, k=2) -> {5,7} или {3,5}
 
 def find_k_neares(arr, idx, k):
-    if (k > len(arr)):
+    if k > len(arr):
         return []
 
     central_elem = arr[idx]
@@ -36,4 +33,28 @@ def find_k_neares(arr, idx, k):
 
     return result
 
-print(find_k_neares([4,12,15,15,24], 1, 3))
+
+class Solution:
+    def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
+        if k >= len(arr):
+            return arr
+
+        left = 0
+        right = len(arr) - 1
+
+        while right - left + 1 > k:
+            diff_left = abs(x - arr[left])
+            diff_right = abs(x - arr[right])
+
+            if diff_left > diff_right:
+                left += 1
+            else:
+                right -= 1
+
+        return arr[left:right+1]
+
+
+solution = Solution()
+
+print(solution.findClosestElements([1, 2, 3, 4, 5], 4, 3))
+print(solution.findClosestElements([1], 1, 1))

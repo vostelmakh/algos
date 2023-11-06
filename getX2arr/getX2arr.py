@@ -2,40 +2,40 @@ def getX2arr(arr):
     max_negative_num_idx = None
 
     for i in range(len(arr)):
-        if arr[i] < 0 and (max_negative_num_idx == None or arr[i] > arr[max_negative_num_idx]):
+        if arr[i] < 0 and (max_negative_num_idx is None or arr[i] > arr[max_negative_num_idx]):
             max_negative_num_idx = i
 
     res = []
 
-    if (max_negative_num_idx == None):
+    if max_negative_num_idx == None:
         # все числа положительные, возводим их в квадрат
         for num in arr:
             res.append(num * num)
 
         return res
-    
+
     if (max_negative_num_idx == len(arr) - 1):
         # все числа отрицательные, возводим их в квадрат
         for num in reversed(arr):
             res.append(num * num)
 
         return res
-    
+
     left = max_negative_num_idx
     right = max_negative_num_idx + 1
 
     while len(res) < len(arr):
-        if (right > len(arr) - 1):
+        if right > len(arr) - 1:
             res.append(arr[left] * arr[left])
             left -= 1
             continue
 
-        if (left < 0):
+        if left < 0:
             res.append(arr[right] * arr[right])
             right += 1
             continue
 
-        if (abs(arr[left]) > arr[right]):
+        if abs(arr[left]) > arr[right]:
             res.append(arr[right] * arr[right])
             right += 1
         else:

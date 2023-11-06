@@ -16,7 +16,6 @@ class Solution:
 
             nums[i], nums[current] = nums[current], nums[i]
 
-
     def permute(self, nums: List[int]) -> List[List[int]]:
         self.result = []
         self.backtrack(0, nums)
@@ -32,19 +31,13 @@ print(solution.permute([1,2]))
 # │   │   └── backtrack(3, [1, 2, 3])
 # │   ├── backtrack(2, [1, 3, 2])
 # │   │   └── backtrack(3, [1, 3, 2])
-# │   └── backtrack(2, [1, 3, 2])
-# │       └── backtrack(3, [1, 3, 2])
 # ├── backtrack(1, [2, 1, 3])
 # │   ├── backtrack(2, [2, 1, 3])
 # │   │   └── backtrack(3, [2, 1, 3])
 # │   ├── backtrack(2, [2, 3, 1])
 # │   │   └── backtrack(3, [2, 3, 1])
-# │   └── backtrack(2, [2, 3, 1])
-# │       └── backtrack(3, [2, 3, 1])
 # └── backtrack(1, [3, 2, 1])
 #     ├── backtrack(2, [3, 2, 1])
 #     │   └── backtrack(3, [3, 2, 1])
 #     ├── backtrack(2, [3, 1, 2])
 #     │   └── backtrack(3, [3, 1, 2])
-#     └── backtrack(2, [3, 1, 2])
-#         └── backtrack(3, [3, 1, 2])

@@ -1,4 +1,6 @@
-# Дан список интов, повторяющихся элементов в списке нет. Нужно преобразовать это множество в строку, сворачивая соседние по числовому ряду числа в диапазоны. Примеры:
+# Дан список интов, повторяющихся элементов в списке нет.
+# Нужно преобразовать это множество в строку, сворачивая соседние по числовому ряду числа в диапазоны.
+# Примеры:
 # [1,4,5,2,3,9,8,11,0] => "0-5,8-9,11"
 # [1,4,3,2] => "1-4"
 # [1,4] => "1,4"
@@ -21,10 +23,9 @@ def arr2interval(numbers):
 
         groups.append(num_group)
 
-        num_group = []
-        num_group.append(num)
+        num_group = [num]
 
-    if (len(num_group) > 0):
+    if len(num_group) > 0:
         groups.append(num_group)
 
     result = ''
@@ -33,7 +34,7 @@ def arr2interval(numbers):
         if len(result) > 0:
             result += ','
 
-        first = group[0] 
+        first = group[0]
         last = group[-1]
 
         if first == last:

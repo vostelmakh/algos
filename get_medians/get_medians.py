@@ -1,5 +1,6 @@
 from sortedcontainers import SortedList
 
+
 def get_medians(arr, window_size):
     def get_median(arr):
         if len(arr) % 2 == 1:
@@ -9,6 +10,7 @@ def get_medians(arr, window_size):
 
     window = SortedList(arr[:window_size])
     result = [get_median(window)]
+
     for i in range(window_size, len(arr)):
         window.remove(arr[i - window_size])
         window.add(arr[i])

@@ -1,15 +1,15 @@
 # Для заданной строки s и целого числа k вернуть длину самой длинной подстроки s, содержащей не более k различных символов.
+# sliding_window
 
 def find(s, k):
-    if (len(s) == 0 or k == 0):
+    if len(s) == 0 or k == 0:
         return 0
-    
-    if (len(s) <= k):
+
+    if len(s) <= k:
         return len(s)
-    
+
     char_frequency = {}
     max_length = 0
-    start_index = 0
     unique_count = 0
 
     left = 0
@@ -36,6 +36,3 @@ def find(s, k):
 
     return max_length
 
-    
-print(find("eceeba", 2))
-    
