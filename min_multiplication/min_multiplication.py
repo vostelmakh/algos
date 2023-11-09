@@ -1,4 +1,7 @@
-def calculate(arr):
+from typing import List
+
+
+def calculate(arr: List[int]) -> int:
     n = len(arr)
     if n < 2:
         raise ValueError("arr must contain at least 2 elements")
