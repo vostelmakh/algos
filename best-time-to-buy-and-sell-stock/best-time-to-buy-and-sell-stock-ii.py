@@ -15,12 +15,8 @@ class Solution:
         sell = 0
 
         for price in prices:
-            print('price:', price, "sell:", sell, "buy:", buy)
-
             next_buy = max(buy, sell - price)
             next_sell = max(sell, buy + price)
-
-            print("next_buy:", next_buy, "next_sell:", next_sell)
 
             sell = next_sell
             buy = next_buy

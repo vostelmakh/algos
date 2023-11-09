@@ -17,7 +17,7 @@ class Solution:
         for i in range(1, len(prices)):
             price = prices[i]
 
-            max_profit = max(max_profit, price)
+            max_profit = max(max_profit, price - current_min)
 
             current_min = min(current_min, price)
 

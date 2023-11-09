@@ -63,5 +63,5 @@ def insert(intervals: List[List[int]], newInterval: List[int]) -> List[List[int]
 
 
 # res = merge([(1, 3), (100, 200), (2, 4)] )
-res = insert([[1,5]], [2, 7])
+res = insert([[1, 5]], [2, 7])
 print(res)
