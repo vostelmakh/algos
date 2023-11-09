@@ -1,5 +1,3 @@
-
-
 def calculate(arr):
     n = len(arr)
     if n < 2:
